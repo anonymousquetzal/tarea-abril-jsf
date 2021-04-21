@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Agregar Producto</title>
+    </h:head>
+
+    <h:body>
+
+        <h1>Agregar Producto</h1>
+
+        <h:form>
+            <!-- 
+            private String di;
+    private int codigo; done
+    private String nombredone
+    private BigDecimal precio_base; done
+    private BigDecimal precio_venta; done
+    private String existencia;
+    private Date creadoEl; done
+            -->
+
+            <p:panelGrid columns="2"> 
+                <p:outputLabel for="CodigoInputText"
+                               value="Codigo:  "/>
+
+                <p:inputText id="CodigoInputText" 
+                             value="#{crearProductosControlador.producto.codigo}"
+                             required="true"
+                             requiredMessage="Campo 'Codigo' es obligatorio."/>
+
+                <p:outputLabel for="nameInputText"
+                               value="Nombre:  "/>
+
+                <p:inputText id="nameInputText" 
+                             value="#{crearProductosControlador.producto.nombre}"
+                             required="true"
+                             requiredMessage="Campo 'Nombre' es obligatorio."/>
+
+                <p:outputLabel for="PrecioBaseInputText"
+                               value="Precio Base:  "/>
+
+                <p:inputText id="PrecioBaseInputText" 
+                             value="#{crearProductosControlador.producto.precio_base}"
+                             required="true"
+                             requiredMessage="Campo 'Precio Base' es obligatorio."/>
+
+                <p:outputLabel for="PrecioBaseInputText"
+                               value="Precio Venta:  "/>
+
+                <p:inputText id="PrecioVentaInputText" 
+                             value="#{crearProductosControlador.producto.precio_venta}"
+                             required="true"
+                             requiredMessage="Campo 'Precio Venta' es obligatorio."/>
+
+                <p:outputLabel for="Existencia"
+                               value="Existencia:  "/>
+
+                <p:inputText id="Existencia" 
+                             value="#{crearProductosControlador.producto.existencia}"
+                             required="true"
+                             requiredMessage="Campo 'E
+                             xistencia' es obligatorio."/>
+
+
+            </p:panelGrid>            
+
+
+            <p:commandButton 
+                value="Agregar"
+                actionListener="#{crearProductosControlador.agregar()}"                
+                process="@form"
+                update="@form"
+                />
+
+            <div>
+                <h:link outcome="mostrar-productos"
+                        value="Ir a mostrar producto"/>
+            </div>
+
+            <div>
+                <h:link outcome="index"
+                        value="Inicio"/>
+            </div>
+
+    </h:body>
+
+</html>
